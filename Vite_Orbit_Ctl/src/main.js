@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import './style.css';
+import { useEffect } from 'react';
 
 const canvas = document.getElementById("canvas");
 
@@ -18,7 +18,7 @@ const material = new THREE.MeshLambertMaterial({ color: "#468585", emissive: "#4
 const dodecahedron = new THREE.Mesh(geometry, material);
 
 const cube = new THREE.BoxGeometry(2, 0.1, 2);
-const boxMaterial = new THREE.MeshLambertMaterial({ color: "#b4b4b5", emissive: "#b4b4b5" });
+const boxMaterial = new THREE.MeshStandardMaterial({ color: "#b4b4b5", emissive: "#b4b4b5" });
 const box = new THREE.Mesh(cube, boxMaterial);
 box.position.y = -1.5;
 
@@ -58,5 +58,14 @@ function animate() {
     renderer.render(scene, camera);
 
 }
+
+//Handle resize Window
+
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth/ window.innerHeight)
+
+})
 
 animate()
