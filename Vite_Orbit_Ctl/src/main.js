@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { useEffect } from 'react';
 
 const canvas = document.getElementById("canvas");
 
@@ -64,7 +63,7 @@ function animate() {
 window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth/ window.innerHeight)
+    renderer.setSize(window.innerWidth, window.innerHeight)
 
 })
 
