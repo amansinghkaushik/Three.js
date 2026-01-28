@@ -7,23 +7,43 @@ import { Leva, useControls } from 'leva'
 
 function Hero() {
 
-  const controls = useControls('HackerRoom',{
-    rotationX: {
-      value: 2.5,
-      min: -10,
-      max: 10
-    },
-    rotationY: {
-      value: 2.5,
-      min: -10,
-      max: 10
-    },
-    rotationZ: {
-      value: 2.5,
-      min: -10,
-      max: 10
-    },
-  })
+//   const controls = useControls('HackerRoom',{
+//     rotationX: {
+//       value: 2.5,
+//       min: -10,
+//       max: 10
+//     },
+//     rotationY: {
+//       value: 2.5,
+//       min: -10,
+//       max: 10
+//     },
+//     rotationZ: {
+//       value: 2.5,
+//       min: -10,
+//       max: 10
+//     },
+//     scale : {
+//       value : 0.1,
+//       max : 10
+//     },
+//     positionX :{
+//       value : 1,
+//       min : -10,
+//       max : 10
+//     },
+//     positionY :{
+//       value : 1,
+//       min : -10,
+//       max : 10
+//     },
+//     positionZ :{
+//       value : 1,
+//       min : -10,
+//       max : 10
+//     },
+//     }
+// )
 
   return (
     <section className='max-h-screen'>
@@ -35,16 +55,18 @@ function Hero() {
       </div>
 
       <div className="w-full h-full absolute inset-0">
+        {/* <Leva /> */}
         <Canvas className="w-full h-full">
-            <Leva />
             <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 30]} />
 
             <HackerRoom 
-            scale={0.07} 
-            position={[0, 0, 0]} 
-            // rotation={[0, 0, 0]} 
-            rotation={[controls.rotationX, controls.rotationY, controls.rotationZ]} 
+            scale={0.1} 
+            position={[0, -8, 1]} 
+            rotation={[0.1, 3.1, 0]}
+            // scale= {[controls.scale, controls.scale, controls.scale]} 
+            // position= {[controls.positionX, controls.positionY, controls.positionZ]}
+            // rotation={[controls.rotationX, controls.rotationY, controls.rotationZ]} 
             />
 
             <ambientLight intensity={1} />
