@@ -3,9 +3,17 @@ import HackerRoom from '../components/HackerRoom'
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import CanvasLoader from '../components/CanvasLoader'
+import { calculateSizes } from '../constants/index.js';
 import { Leva, useControls } from 'leva'
+import { useMediaQuery } from 'react-responsive';
 
 function Hero() {
+
+  const isSmall = useMediaQuery({ maxWidth: 440 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+
+  const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
 //   const controls = useControls('HackerRoom',{
 //     rotationX: {
@@ -58,11 +66,11 @@ function Hero() {
         {/* <Leva /> */}
         <Canvas className="w-full h-full">
             <Suspense fallback={<CanvasLoader />}>
-            <PerspectiveCamera makeDefault position={[0, 0, 30]} />
+            <PerspectiveCamera makeDefault position={[0, 0, 20]} />
 
             <HackerRoom 
-            scale={0.1} 
-            position={[0, -8, 1]} 
+            scale={sizes.deskScale} 
+            position={sizes.deskPosition} 
             rotation={[0.1, 3.1, 0]}
             // scale= {[controls.scale, controls.scale, controls.scale]} 
             // position= {[controls.positionX, controls.positionY, controls.positionZ]}
