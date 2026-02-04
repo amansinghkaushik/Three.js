@@ -7,6 +7,7 @@ import { calculateSizes } from '../constants/index.js';
 import { Leva, useControls } from 'leva'
 import { useMediaQuery } from 'react-responsive';
 import ReactLogo from '../components/ReactLogo.jsx'
+import Cube from '../components/Cube.jsx'
 
 function Hero() {
 
@@ -80,6 +81,7 @@ function Hero() {
 
             <group>
               <ReactLogo position= {sizes.reactLogoPosition}/>
+              <Cube position= {sizes.cubePosition} />
             </group>
 
             <ambientLight intensity={1} />
