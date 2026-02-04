@@ -6,6 +6,7 @@ import CanvasLoader from '../components/CanvasLoader'
 import { calculateSizes } from '../constants/index.js';
 import { Leva, useControls } from 'leva'
 import { useMediaQuery } from 'react-responsive';
+import ReactLogo from '../components/ReactLogo.jsx'
 
 function Hero() {
 
@@ -76,6 +77,10 @@ function Hero() {
             // position= {[controls.positionX, controls.positionY, controls.positionZ]}
             // rotation={[controls.rotationX, controls.rotationY, controls.rotationZ]} 
             />
+
+            <group>
+              <ReactLogo position= {sizes.reactLogoPosition}/>
+            </group>
 
             <ambientLight intensity={1} />
             <directionalLight position={[10, 10, 10]} intensity={0.5} />
