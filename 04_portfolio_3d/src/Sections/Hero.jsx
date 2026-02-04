@@ -8,6 +8,8 @@ import { Leva, useControls } from 'leva'
 import { useMediaQuery } from 'react-responsive';
 import ReactLogo from '../components/ReactLogo.jsx'
 import Cube from '../components/Cube.jsx'
+import Target from '../components/Target.jsx'
+import Rings from '../components/Rings.jsx'
 
 function Hero() {
 
@@ -80,8 +82,10 @@ function Hero() {
             />
 
             <group>
+              <Target position={sizes.targetPosition}/>
               <ReactLogo position= {sizes.reactLogoPosition}/>
               <Cube position= {sizes.cubePosition} />
+              <Rings position= {sizes.ringPosition} />
             </group>
 
             <ambientLight intensity={1} />
