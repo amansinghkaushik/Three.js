@@ -10,6 +10,7 @@ import ReactLogo from '../components/ReactLogo.jsx'
 import Cube from '../components/Cube.jsx'
 import Target from '../components/Target.jsx'
 import Rings from '../components/Rings.jsx'
+import HeroCamera from '../components/HeroCamera.jsx'
 
 function Hero() {
 
@@ -19,7 +20,7 @@ function Hero() {
 
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
-//   const controls = useControls('Target',{
+//   const controls = useControls('Ring',{
 //     rotationX: {
 //       value: 2.5,
 //       min: -10,
@@ -72,14 +73,13 @@ function Hero() {
             <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 20]} />
 
-            <HackerRoom 
-            scale={sizes.deskScale} 
-            position={sizes.deskPosition} 
-            rotation={[0.1, 3.1, 0]}
-            // scale= {[controls.scale, controls.scale, controls.scale]} 
-            // position= {[controls.positionX, controls.positionY, controls.positionZ]}
-            // rotation={[controls.rotationX, controls.rotationY, controls.rotationZ]} 
-            />
+            <HeroCamera isMobile={isMobile} >
+              <HackerRoom 
+              scale={sizes.deskScale} 
+              position={sizes.deskPosition} 
+              rotation={[0.1, 3.1, 0]}
+              />
+            </HeroCamera>
 
             <group>
               <Target position={sizes.targetPosition}
@@ -89,7 +89,7 @@ function Hero() {
             />
               <ReactLogo position= {sizes.reactLogoPosition}/>
               <Cube position= {sizes.cubePosition} />
-              <Rings position= {sizes.ringPosition} />
+              <Rings position= {sizes.ringPosition}/>
             </group>
 
             <ambientLight intensity={1} />
