@@ -1,10 +1,9 @@
-import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 function Target(props) {
   const { nodes, materials } = useGLTF('models/js-logo.glb')
   return (
-    <group position={[9, -4, 0]} scale={0.74} {...props} dispose={null}>
+    <group scale={10} rotation={[2.5, 2.7, 3.5]} {...props} dispose={null}>
       <mesh castShadow receiveShadow geometry={nodes.Mesh.geometry} material={materials.yellow} />
       <mesh castShadow receiveShadow geometry={nodes.Mesh_1.geometry} material={materials.black} />
     </group>

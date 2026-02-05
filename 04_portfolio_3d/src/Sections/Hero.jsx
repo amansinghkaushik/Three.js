@@ -19,7 +19,7 @@ function Hero() {
 
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
-//   const controls = useControls('HackerRoom',{
+//   const controls = useControls('Target',{
 //     rotationX: {
 //       value: 2.5,
 //       min: -10,
@@ -82,7 +82,11 @@ function Hero() {
             />
 
             <group>
-              <Target position={sizes.targetPosition}/>
+              <Target position={sizes.targetPosition}
+            //   scale= {[controls.scale, controls.scale, controls.scale]} 
+            // position= {[controls.positionX, controls.positionY, controls.positionZ]}
+            // rotation={[controls.rotationX, controls.rotationY, controls.rotationZ]} 
+            />
               <ReactLogo position= {sizes.reactLogoPosition}/>
               <Cube position= {sizes.cubePosition} />
               <Rings position= {sizes.ringPosition} />
