@@ -2,6 +2,7 @@ import React from "react"
 import Navbar from "./Sections/Navbar"
 import Hero from "./Sections/Hero"
 import About from "./Sections/About"
+import Projects from "./Sections/Projects"
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Navbar />
         <Hero />
         <About />
+        <Projects />
       </main>
     </>
   )
