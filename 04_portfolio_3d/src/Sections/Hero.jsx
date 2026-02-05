@@ -60,16 +60,8 @@ function Hero() {
 // )
 
   return (
-    <section className='max-h-screen'>
-        <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
-        <p className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans">
-          Hi, I am Aman <span className="waving-hand">👋</span>
-        </p>
-        <p className="hero_tag text-gray_gradient">Building Products & Brands</p>
-      </div>
-
-      <div className="w-full h-full absolute inset-0">
-        {/* <Leva /> */}
+    <section className='relative h-screen w-full'>
+      <div className="absolute inset-0">
         <Canvas className="w-full h-full">
             <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 20]} />
@@ -90,7 +82,7 @@ function Hero() {
             />
               <ReactLogo position= {sizes.reactLogoPosition}/>
               <Cube position= {sizes.cubePosition} />
-              <Rings position= {sizes.ringPosition}/>
+              <Rings position= {sizes.ringPosition} />
             </group>
 
             <ambientLight intensity={1} />
@@ -98,8 +90,16 @@ function Hero() {
             </Suspense>
         </Canvas>  
       </div>
-      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
-        <a href="#about" className="w-fit">
+
+      <div className="absolute inset-0 flex flex-col sm:mt-36 mt-20 c-space gap-3 z-10 pointer-events-none">
+        <p className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans pointer-events-auto">
+          Hi, I am Aman <span className="waving-hand">👋</span>
+        </p>
+        <p className="hero_tag text-gray_gradient pointer-events-auto">Building Products & Brands</p>
+      </div>
+
+      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space pointer-events-none">
+        <a href="#about" className="w-fit pointer-events-auto">
           <Button name="Let's work together" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
         </a>
       </div>
