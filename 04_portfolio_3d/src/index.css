@@ -331,13 +331,14 @@ body {
 .work-container {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
+  align-items: stretch;
   gap: 1.25rem;
   margin-top: 3rem;
 }
 
 @media (min-width: 1024px) {
   .work-container {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr 2fr;
   }
 }
 
@@ -346,6 +347,8 @@ body {
   border-radius: 0.5rem;
   background-color: #0E0E10;
   border: 1px solid #1C1C21;
+  height: auto;
+  max-height: fit-content;
 }
 
 .work-content {
@@ -353,6 +356,15 @@ body {
   border-radius: 0.5rem;
   background-color: #0E0E10;
   border: 1px solid #1C1C21;
+  height: auto;
+  max-height: fit-content;
+}
+
+@media (min-width: 1024px) {
+  .work-content {
+    grid-column: span 1;
+    max-height: fit-content;
+  }
 }
 
 .work-content_container {

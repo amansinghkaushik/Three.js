@@ -5,6 +5,8 @@ import About from "./Sections/About"
 import Projects from "./Sections/Projects"
 import Clients from "./Sections/Clients"
 import Contacts from "./Sections/Contact"
+import Footer from "./Sections/Footer"
+import Experience from './Sections/Experience'
 
 
 function App() {
@@ -17,8 +19,10 @@ function App() {
         <Hero />
         <About />
         <Projects />
+        <Experience />
         <Clients />
         <Contacts />
+        <Footer />
       </main>
     </>
   )
