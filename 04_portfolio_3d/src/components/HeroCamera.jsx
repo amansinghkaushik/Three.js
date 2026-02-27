@@ -4,18 +4,18 @@ import { easing } from 'maath'
 
 function HeroCamera({ children, isMobile }) {
     
-    const groupref = useRef()
+    const group = useRef()
 
     useFrame((state, delta) => {
         easing.damp3(state.camera.position, [0, 0, 20], 0.25, delta)
 
         if (!isMobile) {
-            easing.dampE(groupref.current.rotation, [-state.pointer.y / 5, state.pointer.x / 5, 0], 0.25, delta)
+            easing.dampE(group.current.rotation, [-state.pointer.y / 5, state.pointer.x / 5, 0], 0.25, delta)
         }
     })
 
   return (
-    <group scale={isMobile? 1 : 1.3 } ref={groupref}>
+    <group scale={isMobile? 1 : 1.3 } ref={group}>
         {children}
     </group>
   )

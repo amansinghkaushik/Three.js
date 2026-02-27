@@ -7,6 +7,7 @@ import Clients from "./Sections/Clients"
 import Contacts from "./Sections/Contact"
 import Footer from "./Sections/Footer"
 import Experience from './Sections/Experience'
+import Burn from "./Sections/Burn"
 
 
 function App() {
@@ -18,7 +19,10 @@ function App() {
         <Navbar />
         <Hero />
         <About />
-        <Projects />
+        <Burn 
+          behindContent={<Projects />}
+          topImage="/assets/spotlight1.png"
+        />
         <Experience />
         <Clients />
         <Contacts />
